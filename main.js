@@ -27,7 +27,7 @@ function main(mongopubsub) {
   mongopubsub.subscribe('events', function (event) {
     console.log(event);
     if(event.type == 'feed') {
-      var message = '';
+      var message = 'Feed ' + event.feed + ' reporting ' + event.url;
 
       email.send({
         text: message,
